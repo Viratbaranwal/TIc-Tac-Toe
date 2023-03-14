@@ -1,5 +1,5 @@
 console.log("Welcome To MyTicTacToe");
-let muisc = new Audio("music.mp3");
+// let muisc = new Audio("music.mp3");
 let tap = new Audio("tap.mp3");
 let gameover = new Audio("gameover.mp3");
 let isgameover = false;
@@ -37,9 +37,6 @@ const checkWin = ()=> {
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px";
         }
     })
-}
-if(isgameover===false){
-    muisc.play();
 }
     let boxes = document.getElementsByClassName("box");
     Array.from(boxes).forEach(element =>{
