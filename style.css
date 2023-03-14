@@ -1,5 +1,6 @@
-*{
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{    margin: 0;
     padding: 0;
 }
 .navbar{
@@ -16,25 +17,31 @@ nav ul{
 }
 
 nav ul li{
-    /* margin: 2px; */
     padding: 12px;
 }
 
 .gamecontainer{
+    /* border: 2px solid red; */
     display: flex;
-    justify-content: space-evenly;
-    margin: 50px;
+    justify-content: center;
+    padding: 50px;
+    padding-top: 100px;
+    height: 40vw;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    
 }
 
 .container{
     display: grid;
     grid-template-columns: repeat(3,10vw);
     grid-template-rows: repeat(3,10vw);
+    
 }
 
 .box{
-    border: 2px solid black;
-    font-size: 5vw;
+    border: 3px solid brown;
+    font-size: 6vw;
     display: flex;
     justify-content: center;
 
@@ -44,8 +51,29 @@ nav ul li{
     align-items: center;
     justify-content: center;
 }
+.gameinfo{
+    font-size: 1.6vw;
+    padding-left: 150px;
+}
+.gameinfo h1{
+    padding: 10px;
+    font-family: 'Pacifico', cursive;
+}
+.bt{
+    padding: 15px;
+}
+#reset{
+    font-size: 1.3vw;
+    padding: 3px 15px;
+    border-radius: 10px;
+    margin-left: 15px;
+    background-color: rgb(114, 74, 74);
+}
+#reset:hover{
+    color: white;
+}
 .box:hover{
-    background-color: cyan;
+    background-color: rgb(204, 191, 191);
 }
 
 .bb{
@@ -64,4 +92,5 @@ nav ul li{
 .imgbox img{
     width: 0;
     transition: width 1s ease-in-out;
+    background-blend-mode: multiply;
 }
