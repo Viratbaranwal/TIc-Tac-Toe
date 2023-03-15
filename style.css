@@ -62,6 +62,10 @@ nav ul li{
 .bt{
     padding: 15px;
 }
+.info{
+    font-size: 1.8vw;
+    font-family: 'Pacifico', cursive;
+}
 #reset{
     font-size: 1.3vw;
     padding: 3px 15px;
@@ -72,8 +76,41 @@ nav ul li{
 #reset:hover{
     color: white;
 }
+#nextRound{
+    font-size: 1.3vw;
+    padding: 3px 15px;
+    border-radius: 10px;
+    margin-left: 15px;
+    background-color: rgb(114, 74, 74);
+}
+#nextRound:hover{
+    color: white;
+}
+#newGame{
+    font-size: 1.3vw;
+    padding: 3px 15px;
+    border-radius: 10px;
+    margin-left: 15px;
+    background-color: rgb(114, 74, 74);
+}
+#newGame:hover{
+    color: white;
+}
 .box:hover{
     background-color: rgb(204, 191, 191);
+}
+th{
+    border: 2px solid black;
+    padding: 5px;
+    
+}
+table{
+    margin: auto;
+}
+h2{
+    text-align: center;
+    padding: 10px;
+    /* color: rgb(44, 17, 17); */
 }
 
 .bb{
