@@ -59,7 +59,7 @@ const checkWin = ()=> {
             s.innerText = ngames ;
             gameover.play();
             isgameover = true;
-            document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px";
+            document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "190px";
         }
     })
 }
@@ -91,6 +91,7 @@ reset.addEventListener('click', ()=>{
         e.innerText = ""
     });
     turn = "X";
+    count=0;
     isgameover = false;
     document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
@@ -104,6 +105,7 @@ nextRound.addEventListener('click', ()=>{
     });
     turn = "X";
     isgameover = false;
+    count=0;
     ngames--;
     s.innerText = ngames ;
     document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
@@ -121,6 +123,7 @@ newGame.addEventListener('click', ()=>{
     isgameover = false;
     document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
+    count=0;
     point1 = 0;
     point2 = 0;
     Player1 = prompt("Enter 1st Player Name: ");
