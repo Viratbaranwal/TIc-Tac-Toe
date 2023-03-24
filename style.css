@@ -25,8 +25,8 @@ nav ul li{
     display: flex;
     justify-content: center;
     padding: 50px;
-    padding-top: 100px;
-    height: 40vw;
+    /* padding-top: 0px; */
+    height: 39.5vw;
     background-image: url(bg.jpg);
     background-size: cover;
     
@@ -130,4 +130,18 @@ h2{
     width: 0;
     transition: width 1s ease-in-out;
     background-blend-mode: multiply;
+}
+
+.flashcard{
+    border: 2px solid red;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 40%;
+    top: 40%;
+    z-index: 10;
+
+}
+.img img{
+    width: 200px;
 }
