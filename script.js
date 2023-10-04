@@ -1,5 +1,4 @@
 console.log("Welcome To MyTicTacToe");
-// let muisc = new Audio("music.mp3");
 let sounds = false;
 let tap = new Audio("tap.mp3");
 let gameover = new Audio("gameover.mp3");
@@ -103,6 +102,11 @@ reset.addEventListener('click', ()=>{
     });
     turn = "X";
     count=0;
+    if(isgameover)
+    {
+        ngames++;
+        s.innerText = ngames;
+    }
     isgameover = false;
     document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
@@ -114,12 +118,12 @@ nextRound.addEventListener('click', ()=>{
     Array.from(bt).forEach(e=>{
         e.innerText="";
     });
-    if(ngames===0)
+    if(ngames<=0)
     {
+        let winner = (point1>point2)?Player1 : Player2;
         Swal.fire({
-            title:" Predefined Sets are Over",
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            title: winner + " won the Match.",
+            confirmButtonColor: '#FF0000',
             confirmButtonText: 'New Game'
           }).then((result) => {
             if (result.isConfirmed) {
@@ -175,8 +179,5 @@ newGame.addEventListener('click', ()=>{
     w.innerText = point1 ;
     s.innerText = ngames ;
 })
-
-
-// Sets Over
 
 

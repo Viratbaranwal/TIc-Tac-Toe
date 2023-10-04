@@ -12,6 +12,8 @@
 }
 
 body {
+    background-image: url("bkg.jpg");
+    background-repeat: repeat;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
   }
 nav ul{
@@ -25,16 +27,28 @@ nav ul li{
 #wtt{
     /* position: absolute; */
     display: flex;
+    backdrop-filter: blur(10px);
+    margin : 5px 15px;
+    border-style:groove;
+    border-radius: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 #wtt h1{
-    font-size: 5vw;
+    color: white;
+    font-size: 4vw;
+    font-family: 'Pacifico', cursive;
+
 }
 
 .gamecontainer{
-    padding-top: 7vw;
+    padding-top: 1vw;
+    backdrop-filter: blur(10px);
+    margin : 5px 15px;
+    border-style:groove;
+    border-radius: 20px;
+    height: 75vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -72,13 +86,14 @@ nav ul li{
   }
 
 .box{
-    border: 3px solid brown;
+    border: 3px solid red;
     font-size: 6vw;
     display: flex;
     justify-content: center;
 
 }
 .boxtext{
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,44 +110,52 @@ nav ul li{
     padding: 15px;
 }
 .info{
+    color: white;
     font-size: 1.8vw;
     font-family: 'Pacifico', cursive;
 }
 #reset{
     font-size: 1.3vw;
+    color: white;
     padding: 3px 15px;
     border-radius: 10px;
     margin-left: 15px;
-    background-color: rgb(114, 74, 74);
+    background-color: red;
 }
 #reset:hover{
-    color: white;
+    scale: 1.15;
+    transition: 0.5s ease-in-out;
 }
 #nextRound{
     font-size: 1.3vw;
+    color: white;
     padding: 3px 15px;
     border-radius: 10px;
     margin-left: 15px;
-    background-color: rgb(114, 74, 74);
+    background-color: red;
 }
 #nextRound:hover{
-    color: white;
+    scale: 1.15;
+    transition: 0.5s ease-in-out;
 }
 #newGame{
     font-size: 1.3vw;
-    padding: 3px 15px;
+    color: white;
+    padding: 5px 18px;
     border-radius: 10px;
     margin-left: 15px;
-    background-color: rgb(114, 74, 74);
+    background-color: red;
 }
 #newGame:hover{
-    color: white;
+    scale: 1.15;
+    transition: 0.5s ease-in-out;
 }
 .box:hover{
     background-color: rgb(204, 191, 191);
 }
 th{
-    border: 2px solid black;
+    border: 2px solid red;
+    color: white;
     padding: 5px;
     
 }
@@ -142,7 +165,8 @@ table{
 h2{
     text-align: center;
     padding: 10px;
-    /* color: rgb(44, 17, 17); */
+    color: white;
+    /* color: red */
 }
 
 .bb{
