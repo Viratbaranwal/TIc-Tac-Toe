@@ -1,5 +1,6 @@
 console.log("Welcome To MyTicTacToe");
 // let muisc = new Audio("music.mp3");
+let sounds = false;
 let tap = new Audio("tap.mp3");
 let gameover = new Audio("gameover.mp3");
 let isgameover = false;
@@ -14,7 +15,7 @@ var point2 = 0;
 
 
 const changeTurn = ()=> {
-    return turn === "X" ? "0" : "X";
+    return turn === "X" ? "O" : "X";
 }
 
 let d =document.querySelector('.player1');
@@ -33,7 +34,7 @@ let s = document.querySelector('.ngames');
 s.innerText = ngames ;
 
 const checkWin = ()=> {
-    let boxtexts = document.getElementsByClassName('boxtext');
+    let boxtexts = document.getElementsByClassName("boxtext");
     let wins = [
         [0, 1, 2],
         [3, 4, 5],
@@ -51,7 +52,7 @@ const checkWin = ()=> {
             point1++;
             w.innerText = point1 ;
             }
-            else if(boxtexts[e[0]].innerText === "0"){
+            else if(boxtexts[e[0]].innerText === "O"){
                 document.querySelector('.info').innerText = Player2 + " Won";
                 point2++;
                 v.innerText = point2 ;
@@ -59,7 +60,13 @@ const checkWin = ()=> {
             s.innerText = ngames ;
             gameover.play();
             isgameover = true;
-            document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "190px";
+            if(isgameover)
+            {
+                ngames--;
+                s.innerText = ngames;
+            }
+            document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "150px";
+            
         }
     })
 }
@@ -67,15 +74,19 @@ const checkWin = ()=> {
     Array.from(boxes).forEach(element =>{
     let boxtext = element.querySelector('.boxtext');
     element.addEventListener('click', ()=>{
-        if(boxtext.innerText === ''){
+        if(boxtext.innerText === '' && isgameover==false){
             boxtext.innerText = turn;
-            turn = changeTurn();
             tap.play();
+            turn = changeTurn();
             checkWin();
+            
+            
             count++;
             if(count === 9 && isgameover === false)
             {
                 document.getElementsByClassName("info")[0].innerText = " Oops.. Nobody Won!! ";
+                ngames--;
+                s.innerText = ngames;
             }
             else if(!isgameover){
                 document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
@@ -103,11 +114,40 @@ nextRound.addEventListener('click', ()=>{
     Array.from(bt).forEach(e=>{
         e.innerText="";
     });
+    if(ngames===0)
+    {
+        Swal.fire({
+            title:" Predefined Sets are Over",
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'New Game'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                let boxtexts = document.querySelectorAll('.boxtext');
+                Array.from(boxtexts).forEach(e => {
+                    e.innerText = ""
+                });
+                turn = "X";
+                isgameover = false;
+                document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
+                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
+                count=0;
+                point1 = 0;
+                point2 = 0;
+                Player1 = prompt("Enter 1st Player Name: ");
+                Player2 = prompt("Enter 2nd Player Name: ");
+                ngames = prompt("Enter the number of sets: ");
+                d.innerText = Player1 + " Score";
+                t.innerText = Player2 + " Score";
+                v.innerText = point2 ;
+                w.innerText = point1 ;
+                s.innerText = ngames ;
+            }
+          })
+    }
     turn = "X";
     isgameover = false;
     count=0;
-    ngames--;
-    s.innerText = ngames ;
     document.getElementsByClassName("info")[0].innerText = "Turn For " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
 
@@ -137,5 +177,6 @@ newGame.addEventListener('click', ()=>{
 })
 
 
+// Sets Over
 
 
